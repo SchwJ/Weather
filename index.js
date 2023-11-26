@@ -49,23 +49,28 @@ function getWeather(lat, lon) {
 
 function createWidget(data, widgetId) {
     return `<div class="widget">
-        <div id="temperature">
-            Температура: ${(data.main.temp + -273).toFixed(0)}°C
+        <div class="widgetWeatherInfo">
+            <div class="widgetWeatherInfoParameters">
+                <div id="temperature">
+                    Температура: ${(data.main.temp + -273).toFixed(0)}°C
+                </div>
+                <div id="wind">
+                    Скорость ветра: ${(data.wind.speed).toFixed(0)} м/c
+                </div>
+                <div id="humidity">
+                    Влажность: ${data.main.humidity}%
+                </div>
+                <div class="widgetWeatherDesc">
+                    Облачность: ${data.weather[0].description}
+                </div>
+                <img alt="Облачность" class="widgetWeatherIcon" src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">
+            </div>
+            <button class="widgetCloseButton" onclick="this.parentNode.remove()">
+                X
+            </button>
         </div>
-        <div id="wind">
-            Скорость ветра: ${(data.wind.speed).toFixed(0)} м/c
-        </div>
-        <div id="humidity">
-            Влажность: ${data.main.humidity}%
-        </div>
-        <div class="widgetWeatherDesc">
-            Облачность: ${data.weather[0].description}
-        </div>
-        <img alt="Облачность" class="widgetWeatherIcon" src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">
         <div class="map" id="map-${widgetId}"></div>
-        <button class="removeWidgetButton" onclick="this.parentNode.remove()">
-            Удалить
-        </button>
+        
     </div>`
 }
 

@@ -1,5 +1,7 @@
 :root {
     --border: 1px solid black;
+    --indent: 15px;
+    --border-radius: 8px;
 }
 
 .body {
@@ -8,14 +10,11 @@
 }
 
 .weatherForm {
-    margin: 15px;
+    margin: var(--indent);
 }
 
 .latitude, .longitude, .errorMessage, .showButton {
-    display: flex;
-    vertical-align: center;
-
-    margin: 15px 0;
+    margin: var(--indent) 0;
 }
 
 .latitude-label, .longitude-label {
@@ -24,7 +23,7 @@
 
 .latitude-input, .longitude-input, .showButton {
     padding: 5px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     width: 120px;
     border: var(--border);
 }
@@ -38,16 +37,22 @@ button {
     padding: 5px;
     background-color: #355FCA;
     color: #FFFFFF;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
 }
 
 .widget {
     width: 420px;
     display: inline-block;
-    padding: 10px;
-    margin: 15px;
+    margin: var(--indent);
     border: var(--border);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
+}
+
+.widgetWeatherInfo {
+    margin: var(--indent);
+    display: flex;
+    vertical-align: top;
+    justify-content: space-between;
 }
 
 .widgetWeatherIcon {
@@ -57,11 +62,12 @@ button {
 .map {
     width: 380px;
     height: 380px;
-    margin: 10px 5%;
+    margin: var(--indent);
 }
 
-.removeWidgetButton {
-    width: 65px;
+.widgetCloseButton {
+    width: 25px;
+    height: 25px;
     border: var(--border);
 }
 
