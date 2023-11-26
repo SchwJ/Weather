@@ -53,7 +53,7 @@ function createWidget(data, widgetId) {
             Температура: ${(data.main.temp + -273).toFixed(0)}°C
         </div>
         <div id="wind">
-            Скорость ветра: ${data.wind.speed} м/c
+            Скорость ветра: ${(data.wind.speed).toFixed(0)} м/c
         </div>
         <div id="humidity">
             Влажность: ${data.main.humidity}%
