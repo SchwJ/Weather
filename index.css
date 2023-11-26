@@ -1,28 +1,44 @@
-.weatherForm {
-    width: 1000px;
-    display: inline-block;
-    font-size: 18px;
-    text-align: center;
-    margin: 15px 15%;
+:root {
+    --border: 1px solid black;
 }
 
-.input {
-    width: 100px;
-    text-align: center;
-    border: 1px solid;
+.body {
+    font-size: 40px;
+    font-family: Inter, serif;
+}
+
+.weatherForm {
+    margin: 15px;
+}
+
+.latitude, .longitude, .errorMessage, .showButton {
+    display: flex;
+    vertical-align: center;
+
+    margin: 15px 0;
+}
+
+.latitude-label, .longitude-label {
+    height: 26px;
+}
+
+.latitude-input, .longitude-input, .showButton {
+    padding: 5px;
+    border-radius: 8px;
+    width: 120px;
+    border: var(--border);
 }
 
 .errorMessage {
-    font-size: 24px;
-    font-weight: Bold;
     color: red;
 }
 
 .showButton {
-    font-size: 18px;
-    border: solid;
-    padding: 6px;
-    margin: 10px;
+    border: var(--border);
+    padding: 5px;
+    background-color: #355FCA;
+    color: #FFFFFF;
+    border-radius: 8px;
 }
 
 .widget {
@@ -30,9 +46,8 @@
     display: inline-block;
     padding: 10px;
     margin: 15px;
-    border: solid;
-    text-align: center;
-    font-size: 18px;
+    border: var(--border);
+    border-radius: 8px;
 }
 
 .widgetWeatherIcon {
@@ -45,12 +60,8 @@
     margin: 10px 5%;
 }
 
-.widgetMapButton {
-    width: 65px;
-    border: solid;
-}
-
 .removeWidgetButton {
     width: 65px;
-    border: solid;
+    border: var(--border);
 }
+

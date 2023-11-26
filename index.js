@@ -11,8 +11,8 @@ ymaps.ready(function () {
 });
 
 function showWeather() {
-    const lat = parseInt(document.getElementById('latitude').value);
-    const lon = parseInt(document.getElementById('longitude').value);
+    const lat = document.getElementById('latitude').value;
+    const lon = document.getElementById('longitude').value;
     if (!(typeof parseFloat(lat) === 'number' && isFinite(parseFloat(lat)) &&
         typeof parseFloat(lon) === 'number' && isFinite(parseFloat(lon)) &&
         typeof parseFloat(lat - 0) === 'number' && isFinite(parseFloat(lat - 0)) &&
@@ -50,7 +50,7 @@ function getWeather(lat, lon) {
 function createWidget(data, widgetId) {
     return `<div class="widget">
         <div id="temperature">
-            Температура: ${(data.main.temp + -273.15).toFixed(0)}°C
+            Температура: ${(data.main.temp + -273).toFixed(0)}°C
         </div>
         <div id="wind">
             Скорость ветра: ${data.wind.speed} м/c
@@ -59,9 +59,9 @@ function createWidget(data, widgetId) {
             Влажность: ${data.main.humidity}%
         </div>
         <div class="widgetWeatherDesc">
-            ${data.weather[0].description}
+            Облачность: ${data.weather[0].description}
         </div>
-        <img class="widgetWeatherIcon" src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">
+        <img alt="Облачность" class="widgetWeatherIcon" src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">
         <div class="map" id="map-${widgetId}"></div>
         <button class="removeWidgetButton" onclick="this.parentNode.remove()">
             Удалить
