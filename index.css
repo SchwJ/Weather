@@ -41,7 +41,7 @@ button {
 }
 
 .widget {
-    width: 420px;
+    width: 380px;
     display: inline-block;
     margin: var(--indent);
     border: var(--border);
@@ -60,8 +60,8 @@ button {
 }
 
 .map {
-    width: 380px;
-    height: 380px;
+    width: 350px;
+    height: 350px;
     margin: var(--indent);
 }
 
